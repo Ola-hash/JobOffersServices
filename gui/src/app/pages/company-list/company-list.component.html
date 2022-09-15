@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="company-list.component.css">
+<div class="container">
+  <div class="container-wrapped">
+    <div class="title">
+      Lista Firm
+    </div>
+    <div class="company-list">
+      <div *ngFor="let company of companies" class="company-list-item" (click)="navigateToCompanyDetails(company.id)">
+        <div class="company-list-item-name">
+          <div class="company-name">
+            {{company.name}}
+          </div>
+          <div class="company-location">
+            {{company.city}}
+          </div>
+        </div>
+        <div class="company-list-item-description">
+          {{company.description}}
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-secondary mr-2 " (click)="navigateToCreateCompany()">Dodaj firmę</button>
+    <button type="button" class="btn btn-secondary " (click)="navigateToJobOfferList()">Oferty pracy</button>
+  </div>
+</div>

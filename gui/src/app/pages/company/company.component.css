@@ -1,0 +1,40 @@
+.container {
+  align-items: center;
+  height: 100vh;
+}
+
+.container-wrapped {
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+}
+
+.title {
+  font-size: 25px;
+  padding-bottom: 15px;
+  font-weight: bold;
+
+}
+
+.company-item {
+  border: 2px solid darkcyan;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.company-name {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.company-description {
+  padding-bottom: 10px;
+}
+
+.contact {
+  font-size: 15px;
+  font-weight: bold;
+
+}

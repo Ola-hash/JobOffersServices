@@ -1,0 +1,37 @@
+.container {
+  align-items: center;
+  height: 100vh;
+}
+
+.container-wrapped {
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+}
+
+.title {
+  font-size: 25px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.company-list-item {
+  border: 2px solid darkcyan;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.company-name {
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+.company-location {
+  font-size: 16px;
+}
+
+.mr-2 {
+  margin-right: 1rem;
+}

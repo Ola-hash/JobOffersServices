@@ -1,0 +1,60 @@
+.container {
+  align-items: center;
+  height: 100vh;
+}
+
+.container-wrapped {
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+}
+
+.job-offer-list-item {
+  border: 2px solid darkcyan;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: 25px;
+  padding-bottom: 25px;
+  font-weight: bold;
+}
+
+.job-offer-place {
+  padding-bottom: 10px;
+}
+
+
+.job-offer-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.location {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.requirements {
+  font-size: 15px;
+  font-weight: bold;
+}
+.salary{
+  font-size: 15px;
+  font-weight: bold;
+}
+.dateAdded{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.job-offer-requirements {
+  padding-bottom: 10px;
+}
+
+.duties {
+  font-size: 15px;
+  font-weight: bold;
+}

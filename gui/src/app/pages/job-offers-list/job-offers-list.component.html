@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="container-wrapped">
+    <div class="title">Oferty pracy</div>
+    <div class="job-offers-list">
+      <div *ngFor="let jobOffer of jobOffers" class="job-offer-list-item"
+           (click)="navigateToJobOfferDetails(jobOffer.id)">
+        <div class="row">
+          <div class="col-4">
+            <div class="job-offer-list-item-name row">
+              <div class="col-12 job-offer-title d-flex align-items-center">
+                {{jobOffer.title}}
+              </div>
+              <div class="col-12 job-offer-place d-flex align-items-center">
+                {{jobOffer.companyName}}
+              </div>
+            </div>
+          </div>
+          <div class="col-3 d-flex align-items-center">
+            {{jobOffer.minSalary}}&nbsp;&ndash;&nbsp;{{jobOffer.maxSalary}}&nbsp;zl
+          </div>
+          <div class="col-3 d-flex align-items-center">
+            {{jobOffer.location}}
+          </div>
+          <div class="col-2 d-flex align-items-center">
+            <div class="row">
+              <div class="col-12">
+                Data dodania
+              </div>
+              <div class="col-12">
+                {{jobOffer.dateAdded | date: "yyyy-MM-dd"}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-secondary mr-2 " (click)="navigateToCreateOffer()">Dodaj ofertę</button>
+    <button type="button" class="btn btn-secondary mr-2 " (click)="navigateToCompanyList()">List firm</button>
+  </div>
+</div>
+

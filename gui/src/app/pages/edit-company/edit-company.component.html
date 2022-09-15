@@ -1,0 +1,73 @@
+<div class="container">
+  <form [formGroup]="companyForm" class="company-form" (ngSubmit)="editCompany()">
+    <div class="company-form-header">Edytuj firmę</div>
+    <div class="form-group">
+      <label for="company-name"> Nazwa Firmy</label>
+      <input formControlName="name" class="form-control" id="company-name"
+             [ngClass]="{'is-invalid':isFormControlInValid('name')}">
+      <div class="invalid-feedback" *ngIf="hasError('name','required')">
+        Pole nie może być puste
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description"> Opis firmy</label>
+      <input formControlName="description" class="form-control" id="description"
+             [ngClass]="{'is-invalid':isFormControlInValid('description')}">
+      <div class="invalid-feedback" *ngIf="hasError('description','required')">
+        Pole nie może być puste
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="city"> Lokalizacja</label>
+      <input formControlName="city" class="form-control" id="city"
+             [ngClass]="{'is-invalid':isFormControlInValid('city')}">
+      <div class="invalid-feedback" *ngIf="hasError('city','required')">
+        Pole nie może być puste
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="employees"> Liczba pracowników</label>
+      <input formControlName="employees" class="form-control" id="employees"
+             [ngClass]="{'is-invalid':isFormControlInValid('employees')}">
+      <div class="invalid-feedback"
+           *ngIf="hasError('employees','pattern')">
+        Wartość jest wymagana i musi być podana w poprawnym formacie
+      </div>
+      <div class="invalid-feedback"
+           *ngIf="hasError('employees','required')">
+        Pole nie może być puste
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="telephone"> Numer telefonu</label>
+      <input formControlName="telephone" class="form-control" id="telephone"
+             [ngClass]="{'is-invalid':isFormControlInValid('telephone')}">
+      <div class="invalid-feedback"
+           *ngIf="hasError('telephone','pattern')">
+        Wartość jest wymagana i musi być podana w poprawnym formacie
+      </div>
+      <div class="invalid-feedback"
+           *ngIf="hasError('telephone','required')">
+        Pole nie może być puste
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input formControlName="email" class="form-control" id="email"
+             [ngClass]="{'is-invalid':isFormControlInValid('email')}">
+      <div class="invalid-feedback"
+           *ngIf="hasError('email','pattern')">
+        Wartość jest wymagana i musi być podana w poprawnym formacie
+      </div>
+      <div class="invalid-feedback"
+           *ngIf="hasError('email','required')">
+        Pole nie może być puste
+      </div>
+    </div>
+    <div class="buttons form-group">
+      <button type="button" class="btn btn-secondary mr-2" (click)="deleteJobOffer()">Usuń </button>
+      <button type="submit" [disabled]="isSubmitted  && companyForm.invalid" class="btn btn-secondary">Edytuj</button>
+    </div>
+  </form>
+</div>
+

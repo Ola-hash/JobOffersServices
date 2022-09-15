@@ -1,0 +1,124 @@
+<div class="container">
+  <form [formGroup]="jobOfferForm" class="job-offer-form" (ngSubmit)="createJobOffer()">
+    <div class="job-offer-form-header">Nowa oferta pracy</div>
+    <div class="form-group">
+      <label for="job-offer-name">Nazwa oferty</label>
+      <input formControlName="title" class="form-control" id="job-offer-name"
+             [ngClass]="{'is-invalid':isFormControlInValid('title')}">
+      <div class="invalid-feedback" *ngIf="hasError('title', 'required')">
+        Pole nie może być puste
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Opis</label>
+      <input formControlName="description" class="form-control" id="description"
+             [ngClass]="{'is-invalid':isFormControlInValid('description')}">
+      <div class="invalid-feedback"
+           *ngIf="isFormControlInValid('description')">
+        Pole nie może być puste
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="requirements">Wymagania</label>
+      <input formControlName="requirements" class="form-control" id="requirements"
+             [ngClass]="{'is-invalid':isFormControlInValid('requirements')}">
+      <div class="invalid-feedback"
+           *ngIf="isFormControlInValid('requirements')">
+        Pole nie może być puste
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="duties">Obowiązki</label>
+      <input formControlName="duties" class="form-control" id="duties"
+             [ngClass]="{'is-invalid':isFormControlInValid('duties')}">
+      <div class="invalid-feedback"
+           *ngIf="isFormControlInValid('duties')">
+        Pole nie może być puste
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="city">Miasto</label>
+      <input formControlName="location" class="form-control" id="city"
+             [ngClass]="{'is-invalid':isFormControlInValid('location')}">
+      <div class="invalid-feedback"
+           *ngIf="isFormControlInValid('location')">
+        Pole nie może być puste
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="min-salary">Wynagrodzeie minimalne</label>
+          <input formControlName="minSalary" class="form-control" id="min-salary"
+                 [ngClass]="{'is-invalid':isFormControlInValid('minSalary')}">
+          <div class="invalid-feedback"
+               *ngIf="hasError('minSalary','pattern')">
+            Wartość jest wymagana i musi być podana w poprawnym formacie
+          </div>
+          <div class="invalid-feedback"
+               *ngIf="hasError('minSalary','required')">
+            Pole nie może być puste
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="max-salary">Wynagrodzenie maksymalne</label>
+          <input formControlName="maxSalary" class="form-control" id="max-salary"
+                 [ngClass]="{'is-invalid':isFormControlInValid('maxSalary')}">
+          <div class="invalid-feedback"
+               *ngIf="hasError('maxSalary','pattern')">
+            Wartość jest wymagana i musi być podana w poprawnym formacie
+          </div>
+          <div class="invalid-feedback"
+               *ngIf="hasError('maxSalary','required')">
+            Pole nie może być puste
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="date-added">Data dodania oferty</label>
+          <input formControlName="dateAdded" class="form-control" id="date-added"
+                 [ngClass]="{'is-invalid':isFormControlInValid('dateAdded')}">
+          <div class="invalid-feedback"
+               *ngIf="hasError('dateAdded','pattern')">
+            Wartość jest wymagana i musi być podana w poprawnym formacie (yyyy-mm-dd)
+          </div>
+          <div class="invalid-feedback"
+               *ngIf="hasError('dateAdded','required')">
+            Pole nie może być puste
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="date-expired">Data wygaśnięcia oferty</label>
+          <input formControlName="dateExpired" class="form-control" id="date-expired"
+                 [ngClass]="{'is-invalid':isFormControlInValid('dateExpired')}">
+          <div class="invalid-feedback"
+               *ngIf="hasError('dateExpired','pattern')">
+            Wartość jest wymagana i musi być podana w poprawnym formacie (yyyy-mm-dd)
+          </div>
+          <div class="invalid-feedback"
+               *ngIf="hasError('dateExpired','required')">
+            Pole nie może być puste
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="company-name">Nazwa firmy</label>
+      <select formControlName="companyName" class="form-select" id="company-name">
+        <option [value]="companyName" *ngFor="let companyName of companyNames">{{companyName}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button [disabled]="jobOfferForm.invalid" type="submit" class="btn btn-secondary btn-full-width">
+        Dodaj
+      </button>
+    </div>
+  </form>
+</div>

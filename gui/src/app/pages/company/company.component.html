@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="container-wrapped">
+    <div class="title">
+      Szczegóły firmy
+    </div>
+    <div class="company">
+
+      <div class="company-item row">
+        <div class="col-12 company-name  ">
+          {{companies.name}}
+        </div>
+        <div class="col-12 company-description align-items-center">
+          {{companies.description}}
+        </div>
+        <div class="company-contact">
+          <div class="contact">Kontakt:</div>
+          <div class="company-location">
+            {{companies.city}}
+          </div>
+          <div class="company-telephone">
+            tel: {{companies.telephone}}
+          </div>
+          <div class="company-email">
+            email: {{companies.email}}
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-secondary mr-2" (click)="navigate(companies.id)">Edytuj ofertę</button>
+  </div>
+
+</div>

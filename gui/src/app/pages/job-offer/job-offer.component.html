@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="container-wrapped">
+    <div class="title">Szczegóły oferty</div>
+    <div class="job-offers-list">
+      <div class="job-offer-list-item">
+        <div class="row">
+          <div class="col-4">
+            <div class="job-offer-list-item-name row">
+              <div class="col-12 job-offer-title d-flex align-items-center">
+                {{jobOffer.title}}
+              </div>
+              <div class="col-12 job-offer-place d-flex align-items-center">
+                {{jobOffer.companyName}}
+              </div>
+            </div>
+          </div>
+          <div class="job-offer-location row">
+            <div class="location"> Miasto:</div>
+            {{jobOffer.location}}
+          </div>
+          <div class="salary"> Wynagrodzenie:</div>
+          <br> {{jobOffer.minSalary}}&nbsp;&ndash;&nbsp;{{jobOffer.maxSalary}}&nbsp;zl
+        </div>
+        <div class="job-offer-requirements row">
+          <div class="requirements"> Wymagania:</div>
+          {{jobOffer.requirements}}
+        </div>
+        <div class="job-offer-duties row">
+          <div class="duties"> Obowiązki:</div>
+          {{jobOffer.duties}}
+        </div>
+        <div class="job-offer-dateAdded row">
+          <div class="dateAdded"> Data dodania oferty:</div>
+          {{jobOffer.dateAdded | date: "yyyy-MM-dd"}}
+        </div>
+      </div>
+      <button type="button" class="btn btn-secondary mr-2" (click)="navigate(jobOffer.id)">Edytuj ofertę</button>
+    </div>
+  </div>
+</div>
